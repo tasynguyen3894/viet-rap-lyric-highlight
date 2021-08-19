@@ -1,0 +1,28 @@
+{
+  "name": "viet-rap-lyric-highlight",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack --config webpack.config.js --watch --mode development",
+    "watch": "webpack --config webpack.config.js --watch --mode development",
+    "dev": "webpack --config webpack.config.js --mode development",
+    "prod": "webpack --config webpack.config.js --mode production"
+  },
+  "dependencies": {
+    "copy-webpack-plugin": "^6.1.0",
+    "gulp-babel": "^8.0.0",
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tasynguyen3894/viet-rap-lyric-highlight.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tasynguyen3894/viet-rap-lyric-highlight/issues"
+  },
+  "homepage": "https://github.com/tasynguyen3894/viet-rap-lyric-highlight#readme"
+}
