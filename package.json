@@ -1,8 +1,7 @@
 {
   "name": "viet-rap-lyric-highlight",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "version": "1.0.1",
+  "description": "A library to highlight Vietnamese rap lyrics",
   "scripts": {
     "start": "webpack --config webpack.config.js --watch --mode development",
     "watch": "webpack --config webpack.config.js --watch --mode development",
@@ -11,15 +10,21 @@
   },
   "dependencies": {
     "copy-webpack-plugin": "^6.1.0",
-    "gulp-babel": "^8.0.0",
     "webpack": "^4.44.1",
-    "webpack-cli": "^3.3.12"
+    "webpack-cli": "^4.9.2"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/tasynguyen3894/viet-rap-lyric-highlight.git"
   },
-  "author": "",
+  "keywords": [
+    "vietnamese rap"
+  ],
+  "author": {
+    "name": "Sang Nguyen",
+    "email": "thaisang.nguyen3894@gmail.com",
+    "url": "https://sangnguyen.dev"
+  },
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/tasynguyen3894/viet-rap-lyric-highlight/issues"
