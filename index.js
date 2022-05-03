@@ -1,6 +1,6 @@
 
 const rhyme = require('./rhyme');
-const checkRhrymeLib = rhyme.checkRhryme;
+const checkRhryme = rhyme.checkRhryme;
 const removeVietnameseTones = rhyme.removeVietnameseTones;
 const checkSpecial = rhyme.checkSpecial;
 
@@ -8,10 +8,6 @@ function parseLyrics(str) {
     return str.trim().split("\n").map((line) => {
         return line.trim().split(" ");
     })
-}
-
-function checkRhryme(z, zz) {
-    return checkRhrymeLib(z, zz)
 }
 
 function showBaseText(a) {
@@ -95,7 +91,7 @@ function showLyric(a, rhymeLocation, color) {
     return data
 }
 
-function run(baseText, color) {
+function run(baseText, color, rhymes) {
     baseText = formatInputLyric(baseText)
     let a = parseLyrics(baseText)
 
@@ -114,7 +110,7 @@ function run(baseText, color) {
         for(let j = 0; j < a[i].length - 3; j++) {
             for(let z = j + 2; z < a[i].length - 1; z++) {
                 if([a[i][j],a[i][j + 1]].join(' ').toLocaleLowerCase() !== [a[i][z],a[i][z + 1]].join(' ').toLocaleLowerCase()) {
-                    if(checkRhryme(a[i][j], a[i][z]) && checkRhryme(a[i][j + 1], a[i][z + 1])) {
+                    if(checkRhryme(a[i][j], a[i][z], rhymes) && checkRhryme(a[i][j + 1], a[i][z + 1], rhymes)) {
                         rhymeInLines.locations.push(j)
                         rhymeInLines.locations.push(j + 1)
                         rhymeInLines.locations.push(z)
@@ -126,7 +122,7 @@ function run(baseText, color) {
         }
 
         for (let j = 0; j < minLength; j++) {
-            if (checkRhryme(a[i][a[i].length - j - 1], a[i+1][a[i + 1].length - j - 1]))
+            if (checkRhryme(a[i][a[i].length - j - 1], a[i+1][a[i + 1].length - j - 1], rhymes))
             {
                 rhyme2Lines.locations.push(j)
                 rhyme2Lines.partten.push(a[i][a[i].length - j - 1])
@@ -182,11 +178,12 @@ function run(baseText, color) {
 
 const highlight = (text, options = {}) => {
     const {
-        format = 'array',
-        color = '#699940'
+        format = 'text',
+        color = '#699940',
+        rhymes = {},
     } = options;
     
-    const result = run(text, color)
+    const result = run(text, color, rhymes)
     if(format !== 'array') {
         return result.map(line => line.join(' ')).join('<br/>')
     }

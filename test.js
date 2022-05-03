@@ -1,6 +1,10 @@
 const highlight = require('./index');
 
-const lyrics = `Trên đời thứ gì là cho không? Dù một cơn gió đi qua nhẹ\nThế giới dường như ko còn đủ kiên nhẫn được với thời gian cho cha mẹ\nNơi bàn tay mộc mạc,những đùa vui hay là hình phạt nay đã úa\nNgay cả Chúa Người chỉ đứng nhìn,hay nâng ly say và múa\nBất công rồi bất công Người đã cướp đi những bài học\nNgười đã cướp mất trang sách vào đời..Người đã cướp mất những ngày đọc\nNgười đã cướp mất của mẹ con Điều duy nhất trên đời\nVà Người cướp đi đôi mắt,nụ cười..cho ta không thể cất nên lời\nBiết ơn cho ta cảm thấy được sự bình lặng\nĐời ta phải nhìn thẳng..mẹ cho ta biết cách trao và nhận món quà do chính mình tặng\nBồn tắm,tách trà,chiếc dù,ghế..tất cả những điều bỏ sót\nTiếng chim nhỏ hót,đồ chơi dây cót,ta vẽ mặt trời màu đỏ chót\nLót trên đường đời những thay đổi âm thầm và thật đáng sợ\nNhư chơi một ván cờ, nơi con người phải ráng chờ cho đến một ngày mất hết rồi ta gán nợ\nHãy đi rồi yêu bất cứ một ai và xin đừng nói cho ta nghe nữa\nCơ chế suy đồi trong ta đang âm thầm nghe, nhìn qua khe cửa\n\n\nNơi căn phòng trống\nmột đôi vợ chồng sống\nNơi bàn tay đã bắt đầu từng giọt mồ hôi chết tiệt giữa cánh đồng nóng\nHay đã biết cái lạnh dưới lòng cống\nTôi tin vào cha, tin vào mẹ không phải thứ đức tin đồng bóng\nCuộc tình ta buông hình bắt bóng\nkhông muốn thấy nhưng luôn nhìn\nmắt trống nhìn người vui bên muôn nghìn cách sống\nngười giống rập khuôn, mình khác\nsóng chờ ngóng ập tuôn bãi cát nóng\nRubik lập phương rãi rác\ngiống từng đời con người, có nhiều mặt nhưng tồn tại như là xác sống\nrất vất vả\nNhư là vất chất bã, ta nợ một thứ cả đời phải sang bang, sấc bấc trả\nvà khi mất tất cả từng tấc đất ngã màu,ta chết còn không đất cất mả\nngười dưng nước lã trong cuộc đời này bắt ta phải luôn đứng trước cả\nBiết bao cái nóng hân hoan mà Người đang rọi hằng ngày\nTất cả sẽ dừng lại nơi bất công và Người được gọi bằng MÀY\nHãy đi rồi yêu bất cứ một ai và xin đừng nói cho ta nghe nữa\nCơ chế suy đồi trong ta đang âm thầm nghe, nhìn qua khe cửa`;
+const lyrics = `Thất bại cho cái số thèm fame.\n Dùng mặt bợ đít nhiều thằng đến nỗi cái trán nó tèm lem`;
+
 console.log(highlight.highlight(lyrics, {
-    format: "text"
+    format: "text",
+    rhymes: {
+        "em": "fame"
+    }
 }));
