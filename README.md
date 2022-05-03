@@ -25,7 +25,9 @@ highlight.highlight(lyrics, {
 
 __Output:__
 
+```html
 Giang hồ chính hiệu không có lấy một <span style="color: #699940">hình</span> <span style="color: #699940">xăm</span><br/>Mafia kinh tế đô hộ mày hàng <span style="color: #699940">nghìn</span> <span style="color: #699940">năm.</span>
+```
 
 
 ### Custom config
@@ -44,8 +46,9 @@ highlight.highlight(lyrics);
 
 __Output:__
 
-Thất bại cho cái số thèm fame.<br/>Dùng mặt bợ đít nhiều thằng đến nỗi cái trán nó tèm lem
-
+```html
+Thất bại cho cái số thèm fame.<br/>Dùng mặt bợ đít nhiều thằng đến nỗi cái trán nó tèm lem.
+```
 
 Example with config `rhymes`:
 
@@ -61,7 +64,9 @@ highlight.highlight(lyrics, {
 
 __Output:__
 
+```html
 Thất bại cho cái số <span style="color: #699940">thèm</span> <span style="color: #699940">fame.</span><br/>Dùng mặt bợ đít nhiều thằng đến nỗi cái trán nó <span style="color: #699940">tèm</span> <span style="color: #699940">lem</span>
+```
 
 
 Example lyrics from: 
