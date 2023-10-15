@@ -1,4 +1,4 @@
-import { FirstCharacters } from './constant';
+import { FirstCharacters, LastCharacterSameSound } from './constant';
 
 export function parseLyrics(lyric: string): string[][] {
   return lyric.trim().split('\n').map((line) => {
@@ -53,6 +53,18 @@ export function removeFirstCharacter(word: string, customRhymes: CustomeRhyme = 
   return getCustomRhymes(word, customRhymes) || word.replace(new RegExp('^(' + FirstCharacters.join('|') + ')'), '')
 }
 
-export function getLastCharacter(word: string): string {
+export function getWordRhymCharacter(word: string): string {
   return removeFirstCharacter(removeVietnameseTones(word.toLowerCase()));
+}
+
+export function checkRhryme(a: string, b: string, customRhymes: CustomeRhyme = {}): boolean {
+  const aFormatted = removeFirstCharacter(removeVietnameseTones(a.toLocaleLowerCase()), customRhymes)
+  const bFormatted = removeFirstCharacter(removeVietnameseTones(b.toLocaleLowerCase()), customRhymes)
+  if (aFormatted === bFormatted) {
+    return true;
+  }
+  if (LastCharacterSameSound[aFormatted] && LastCharacterSameSound[bFormatted]) {
+    return (LastCharacterSameSound[aFormatted].some(item => LastCharacterSameSound[bFormatted].includes(item)))
+  }
+  return false;
 }

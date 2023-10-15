@@ -1,6 +1,6 @@
 export const FirstCharacters = ['ngh', 'qu', 'th', 'tr', 'nh', 'ng', 'ph', 'kh', 'gh', 'gi', 'ch', 'b', 'c', 'd', 'đ', 'g', 'h', 'k', 'l', 'm', 'n', 'q', 'r', 's', 't', 'v', 'x'];
 export const LastCharacter = ['A', 'AC', 'ACH', 'AI', 'AM', 'AN', 'ANG', 'ANH', 'AO', 'AP', 'AT', 'AU', 'AY', 'ĂC', 'ĂM', 'ĂN', 'ĂNG', 'ĂP', 'ĂT', 'ÂC', 'ÂM', 'ÂN', 'ÂNG', 'ÂP', 'ÂT', 'ÂU', 'ÂY', 'E', 'EC', 'EM', 'EN', 'ENG', 'EO', 'EP', 'ET', 'Ê', 'ÊCH', 'ÊM', 'ÊN', 'ÊNH', 'ÊP', 'ÊT', 'ÊU', 'I', 'IA', 'íCH', 'IÊC', 'IÊM', 'IÊN', 'IÊNG', 'IÊP', 'IÊU', 'IM', 'IN', 'INH', 'IP', 'IT', 'IU', 'O', 'OC', 'OI', 'OM', 'ON', 'ONG', 'OOC', 'OONG', 'OP', 'OT', 'Ô', 'ÔC', 'ÔI', 'ÔM', 'ÔN', 'ÔNG', 'ÔP', 'ÔT', 'Ơ', 'ƠI', 'ƠM', 'ƠN', 'ƠP', 'ƠT', 'U', 'UA', 'UC', 'UI', 'UM', 'UN', 'UNG', 'UÔC', 'UÔI', 'UÔM', 'UÔN', 'UÔNG', 'UÔT', 'UP', 'UT', 'Ư', 'ƯA', 'ƯC', 'ƯI', 'ƯM', 'ƯN', 'ƯNG', 'ƯƠC', 'ƯƠI', 'ƯƠM', 'ƯƠN', 'UƠNG', 'ƯƠP', 'ƯƠT', 'ƯƠU', 'ƯT', 'ƯU'];
-export const LastCharacterSameSound = {
+export const LastCharacterSameSound: { [key: string]: string[] } = {
   'a': ['a'],
   'oa': ['oa', 'a'],
   'ac': ['ac'],

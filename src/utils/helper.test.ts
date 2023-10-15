@@ -1,7 +1,8 @@
 import { it, describe, expect } from 'vitest';
 
 import type { CustomeRhyme } from './helper';
-import { removeVietnameseTones, getCustomRhymes } from './helper';
+import { removeVietnameseTones, getCustomRhymes, removeFirstCharacter, getWordRhymCharacter } from './helper';
+import { FirstCharacters } from './constant';
 
 type TestSuit = {
   description: string
@@ -121,6 +122,29 @@ describe.each(getCustomRhymesDataProvider)('Test getCustomRhymes', ({ descriptio
   it(description, () => {
     expect(getCustomRhymes(word, customRhyme)).toBe(result);
   })
+});
+
+describe('Test remove first character', () => {
+  it('should handle the "gi" word', () => {
+    expect(removeFirstCharacter('gi', {})).toBe('i');
+  });
+
+  it('should handle custom rhymes', () => {
+    expect(removeFirstCharacter('bye', {
+      'ai': ['bye']
+    })).toBe('ai');
+  });
+
+  it('should remove the basic first characters', () => {
+    FirstCharacters.forEach(character => {
+      expect(removeFirstCharacter(character + 'test')).toBe('test');
+    })
+  })
+});
+
+
+describe('Test getWordRhymCharacter', () => {
+  it('should get the last character without Vietnamese tones', () => {
+    expect(getWordRhymCharacter('quá')).toBe('a');
+  })
 })
-
-
