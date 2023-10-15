@@ -33,11 +33,11 @@ export function removeVietnameseTones(word: string): string {
   return result;
 }
 
-export type CustomePhyme = {
+export type CustomeRhyme = {
   [key: string]: string[]
 }
 
-export function getCustomRhymes(word: string, customRhymes: CustomePhyme = {}): string | null {
+export function getCustomRhymes(word: string, customRhymes: CustomeRhyme = {}): string | null {
   for (const key in customRhymes) {
     if(customRhymes[key].includes(word)) {
       return key;
@@ -46,7 +46,7 @@ export function getCustomRhymes(word: string, customRhymes: CustomePhyme = {}): 
   return null;
 }
 
-export function removeFirstCharacter(word: string, customRhymes: CustomePhyme = {}): string {
+export function removeFirstCharacter(word: string, customRhymes: CustomeRhyme = {}): string {
   if (['gi'].indexOf(word) > -1) {
     return 'i';
   }
