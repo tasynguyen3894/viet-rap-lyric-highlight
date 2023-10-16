@@ -1,7 +1,7 @@
 import { it, describe, expect } from 'vitest';
 
 import type { CustomeRhyme } from './helper';
-import { removeVietnameseTones, getCustomRhymes, removeFirstCharacter, getWordRhymCharacter } from './helper';
+import { removeVietnameseTones, getCustomRhymes, removeFirstCharacter, getWordRhymCharacter, checkRhryme } from './helper';
 import { FirstCharacters } from './constant';
 
 type TestSuit = {
@@ -147,4 +147,57 @@ describe('Test getWordRhymCharacter', () => {
   it('should get the last character without Vietnamese tones', () => {
     expect(getWordRhymCharacter('quá')).toBe('a');
   })
+});
+
+type CheckRhrymeTestSuit = TestSuit & {
+  a: string,
+  b: string,
+  customRhyme: CustomeRhyme,
+  result: boolean
+}
+
+const checkRhrymeDataProvider: CheckRhrymeTestSuit[] = [
+  {
+    description: 'should return true if a the same with b',
+    a: 'giỏi',
+    b: 'giỏi',
+    customRhyme: {},
+    result: true
+  },
+  {
+    description: 'should return false if a rhyme is not like b',
+    a: 'giỏi',
+    b: 'quá',
+    customRhyme: {},
+    result: false
+  },
+  {
+    description: 'should return true if a rhyme is like b',
+    a: 'là',
+    b: 'quá',
+    customRhyme: {},
+    result: true
+  },
+  {
+    description: 'should return true if a rhyme is like b in the case have other last character',
+    a: 'phai',
+    b: 'oai',
+    customRhyme: {},
+    result: true
+  },
+  {
+    description: 'should return true if a rhyme is like b with custom rhymes',
+    a: 'oai',
+    b: 'bye',
+    customRhyme: {
+      'ai': ['bye']
+    },
+    result: true
+  }
+];
+
+describe.each(checkRhrymeDataProvider)('Test checkRhryme', ({ description, a, b, customRhyme, result }) => {
+  it(description, () => {
+    expect(checkRhryme(a, b, customRhyme)).toBe(result);
+  });
 })
