@@ -1,7 +1,7 @@
 {
-  "name": "vite-project",
+  "name": "viet-rap-lyric-highlight",
   "private": true,
-  "version": "0.0.0",
+  "version": "2.0.0",
   "type": "module",
   "main": "./dist/rap-lyric.umd.cjs",
   "module": "./dist/rap-lyric.js",
@@ -23,5 +23,22 @@
     "vite": "^4.4.5",
     "vite-plugin-dts": "^3.6.0",
     "vitest": "^0.34.6"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tasynguyen3894/viet-rap-lyric-highlight.git"
+  },
+  "keywords": [
+    "vietnamese rap"
+  ],
+  "author": {
+    "name": "Sang Nguyen",
+    "email": "thaisang.nguyen3894@gmail.com",
+    "url": "https://sangnguyen.dev"
+  },
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tasynguyen3894/viet-rap-lyric-highlight/issues"
+  },
+  "homepage": "https://github.com/tasynguyen3894/viet-rap-lyric-highlight#readme"
 }
