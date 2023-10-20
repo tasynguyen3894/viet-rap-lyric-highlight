@@ -1,1 +1,1 @@
-export { formatInputLyric } from './utils/format';
+export { highlight } from './utils/format';

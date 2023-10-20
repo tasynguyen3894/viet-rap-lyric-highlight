@@ -83,7 +83,7 @@ export type Rhyme = {
 
 export type RhymeLocation = { [key: number]: { [key: number]: boolean } };
 
-export function getLyricRhymeGroup(lyric: Lyric, color: string, rhymes: CustomeRhyme): RhymeLocation {
+export function getLyricRhymeLocation(lyric: Lyric, rhymes: CustomeRhyme, color: string,): RhymeLocation {
   const rhymeGroup: Rhyme[] = []
   const rhymeLocations: RhymeLocation = {}
   for (let i = 0; i < lyric.length - 1; i++) {
@@ -165,7 +165,7 @@ export function getLyricRhymeGroup(lyric: Lyric, color: string, rhymes: CustomeR
   return rhymeLocations;
 }
 
-export function hightlightRhyme(lyric: Lyric, rhymeLocations: RhymeLocation, color: string): Lyric {
+export function highlightRhyme(lyric: Lyric, rhymeLocations: RhymeLocation, color: string): Lyric {
   const data: Lyric = []
   for (let i = 0; i < lyric.length; i++) {
       let line = []
@@ -179,4 +179,12 @@ export function hightlightRhyme(lyric: Lyric, rhymeLocations: RhymeLocation, col
       data.push(line)
   }
   return data
+}
+
+export function highlight(lyric: string, rhymes: CustomeRhyme, color = '#699940'): string {
+  const formattedLyric = formatInputLyric(lyric);
+  const parsedLyric = parseLyrics(formattedLyric);
+  const rhymeLocations = getLyricRhymeLocation(parsedLyric, rhymes, color);
+  const highlightLyric = highlightRhyme(parsedLyric, rhymeLocations, color);
+  return highlightLyric.map(line => line.join(' ')).join('<br/>');
 }
